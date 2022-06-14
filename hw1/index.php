@@ -5,16 +5,41 @@ $a = rand(-100, 100);
 $b = rand(-100, 100);
 $c = rand(-100, 100);
 
-echo "Максимальное число => ";
-echo max($a, $b, $c);
-echo "<br>";
-echo "Число a равно: ${a}";
-echo "<br>";
-echo "Число b равно: ${b}";
-echo "<br>";
-echo "Число c равно: ${c}";
-echo "<br>";
-echo "<br>";
+if ($a>$b && $a>$c){
+    echo "Максимальное число => ${a}";
+    // echo max($a, $b, $c);
+    echo "<br>";
+    echo "Число a равно: ${a}";
+    echo "<br>";
+    echo "Число b равно: ${b}";
+    echo "<br>";
+    echo "Число c равно: ${c}";
+    echo "<br>";
+    echo "<br>";
+} else if ($b>$a&& $b>$c){
+    echo "Максимальное число => ${b}";
+    // echo max($a, $b, $c);
+    echo "<br>";
+    echo "Число a равно: ${a}";
+    echo "<br>";
+    echo "Число b равно: ${b}";
+    echo "<br>";
+    echo "Число c равно: ${c}";
+    echo "<br>";
+    echo "<br>";
+} else {
+
+    echo "Максимальное число => ${c}";
+    // echo max($a, $b, $c);
+    echo "<br>";
+    echo "Число a равно: ${a}";
+    echo "<br>";
+    echo "Число b равно: ${b}";
+    echo "<br>";
+    echo "Число c равно: ${c}";
+    echo "<br>";
+    echo "<br>";
+}
 
 /// Task 2 \\\
 
