@@ -1,5 +1,11 @@
 <?php
-include_once 'data.php';
+    session_start();
+    include_once 'db.php';
+    $res = mysqli_query($connection, 'select * FROM posts'); // Извлекаем данные из базы данных
+    $posts = mysqli_fetch_all($res, MYSQLI_ASSOC); //Извлекаем данные из $res (возвращает данные, состоящие из индексного массива)
+    // print_r($posts);
+    //$posts = mysqli_fetch_assoc($res); //Возвращает один массив по id 1, при следующем вызове возваращет массив по индексу  2
+    //$posts = mysqli_fetch_array($res); //Возвращает один массив по всей таблице
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,21 +56,29 @@ include_once 'data.php';
 
             
             <div class="row">
-                <?php foreach ($posts as $post) :?>
-                
+                <?php foreach ($posts as $post) :
+                    $shortText = strip_tags($post['content']);
+                    $shortText = mb_substr($post['content'],0,  150);
+                    $pos = mb_strrpos($shortText, ' ');
+                    if ($pos !== false){
+                        $shortText = mb_substr($shortText, 0, $pos);
+                    }
+                    $shortText.="...";
+                    ?>
+
                     <div class="col-lg-12">
                         <!-- Blog post-->
                         <div class="card mb-4">
-                            <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                            <a href="#!"><img class="card-img-top" src="<?php echo $post['img'] ?>" alt="..." /></a>
                             <div class="card-body">
                                 <div class="small text-muted">January 1, 2022</div>
-                                <h2 class="card-title h4">Post Title</h2>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
-                                <a class="btn btn-primary" href="#!">Read more →</a>
+                                <h2 class="card-title h4"><?= $post['title'] ?></h2>
+                                <p class="card-text"><?= $shortText ?></p>
+                                <a class="btn btn-primary" href="/page.php?id=<?= $post['id'] ?>">Read more →</a>
                             </div>
                         </div>
                         <!-- Blog post-->
-                        <div class="card mb-4">
+                        <!-- <div class="card mb-4">
                             <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                             <div class="card-body">
                                 <div class="small text-muted">January 1, 2022</div>
@@ -72,7 +86,7 @@ include_once 'data.php';
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
                                 <a class="btn btn-primary" href="#!">Read more →</a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 <?php endforeach ?>
             </div>
@@ -99,10 +113,13 @@ include_once 'data.php';
             <div class="card mb-4">
                 <div class="card-header">Search</div>
                 <div class="card-body">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                        <button class="btn btn-primary" id="button-search" type="button">Go!</button>
-                    </div>
+                    <form action="add_page.php" method = "get">
+                        <div class="input-group">
+                            <input class="form-control" name = "query" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+                            <button class="btn btn-primary" id="button-search" type="submit">Go!</button>
+                        </div>
+                    </form>
+                    
                 </div>
             </div>
             <!-- Categories widget-->
