@@ -69,7 +69,7 @@
                     <div class="col-lg-12">
                         <!-- Blog post-->
                         <div class="card mb-4">
-                            <a href="#!"><img class="card-img-top" src="<?php echo $post['img'] ?>" alt="..." /></a>
+                            <a href="#!"><img class="card-img-top" src="/<?= $post['img'] ?>" alt="..." /></a>
                             <div class="card-body">
                                 <div class="small text-muted">January 1, 2022</div>
                                 <h2 class="card-title h4"><?= $post['title'] ?></h2>
