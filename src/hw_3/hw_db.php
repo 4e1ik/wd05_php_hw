@@ -6,6 +6,4 @@
         echo  "Error: ". mysqli_error($connection);
     }
 
-    // var_dump(mysqli_error($connection));
-    // var_dump(mysqli_errno($connection));
 ?>

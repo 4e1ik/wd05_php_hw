@@ -13,7 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 $_SESSION['is_admin'] = 1;
             } else {
                 $_SESSION['is_admin'] = 0;
+
             }
+        } else {
+            header('Location: /hw_3/hw_regist.php');
         }
     }
 }
@@ -21,19 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 var_dump($_SESSION);
 echo "<br>";
 var_dump($_POST);
-//echo "<br>";
-//echo md5(1111);
-//echo "<br>";
-//echo md5(2222);
-//echo "<br>";
-//echo md5(3333);
-//echo "<br>";
-//echo md5(4444);
-//echo "<br>";
-//echo "<pre>";
-//print_r($users);
-//echo "<pre>";
-
 
 //session_destroy();
 ?>
