@@ -14,11 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             $file_name = $name;
             move_uploaded_file($file['tmp_name'], __DIR__."/".$namePath);
             mysqli_query($connection, "insert into files (file_name, file) values ('$file_name', '$namePath');");
-
-//            echo "Имя файла =>".$name."<br>"."Путь к файлу =>".$namePath."<br>"."Размер файла =>".($file['size']/1048576)." MB"."<br>";
         }
     }
-//    echo "<pre>";s
 
     $list = scandir('uploads');
     foreach ($list as $el){

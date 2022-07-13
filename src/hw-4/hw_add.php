@@ -15,11 +15,11 @@ if (!file_exists('uploads')){
 
 </head>
 <body>
-<form action="hw_test.php" method="post" enctype="multipart/form-data"
+<form action="hw_test.php" method="post" enctype="multipart/form-data">
     <input type="file" name="file">
     <br>
-    <input type="file" name="file2">
-    <br>
+<!--    <input type="file" name="file2">-->
+<!--    <br>-->
     <button type="submit">Send</button>
 </form>
 
