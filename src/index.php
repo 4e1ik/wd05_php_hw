@@ -1,6 +1,7 @@
 <?php
     session_start();
     include_once 'db.php';
+    include_once 'my_functions.php';
     $res = mysqli_query($connection, 'select * FROM posts'); // Извлекаем данные из базы данных
     $posts = mysqli_fetch_all($res, MYSQLI_ASSOC); //Извлекаем данные из $res (возвращает данные, состоящие из индексного массива)
     // print_r($posts);
@@ -56,14 +57,16 @@
 
             
             <div class="row">
-                <?php foreach ($posts as $post) :
-                    $shortText = strip_tags($post['content']);
-                    $shortText = mb_substr($post['content'],0,  150);
-                    $pos = mb_strrpos($shortText, ' ');
-                    if ($pos !== false){
-                        $shortText = mb_substr($shortText, 0, $pos);
-                    }
-                    $shortText.="...";
+<!--                --><?php
+
+                foreach ($posts as $post) :
+//                    $shortText = strip_tags($post['content']);
+//                    $shortText = mb_substr($post['content'],0,  150);
+//                    $pos = mb_strrpos($shortText, ' ');
+//                    if ($pos !== false){
+//                        $shortText = mb_substr($shortText, 0, $pos);
+//                    }
+//                    $shortText.="...";
                     ?>
 
                     <div class="col-lg-12">
@@ -73,7 +76,7 @@
                             <div class="card-body">
                                 <div class="small text-muted">January 1, 2022</div>
                                 <h2 class="card-title h4"><?= $post['title'] ?></h2>
-                                <p class="card-text"><?= $shortText ?></p>
+                                <p class="card-text"><?= shortText($post['content']) ?></p>
                                 <a class="btn btn-primary" href="/page.php?id=<?= $post['id'] ?>">Read more →</a>
                             </div>
                         </div>
