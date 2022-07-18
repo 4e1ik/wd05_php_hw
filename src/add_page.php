@@ -30,12 +30,11 @@ echo "<pre>";
 </head>
 <body>
 <form action="test.php" method="post" enctype="multipart/form-data">
-    <input type="text" name="title" id="editor">
+    <input type="file" name="img1">
     <br>
-    <textarea name="content"></textarea>
+    <input type="file" name="img2">
     <br>
-    <input type="file" name="img">
-    <br>
+
     <button type="submit">Send</button>
 </form>
 
