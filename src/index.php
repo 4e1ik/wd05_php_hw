@@ -2,6 +2,61 @@
     session_start();
     include_once 'db.php';
     include_once 'my_functions.php';
+    include_once 'Human.php';
+    include_once 'Animal.php';
+    include_once 'Debug.php';
+    include_once 'Student.php';
+    include_once 'Worker.php';
+
+    $worker1 = new Worker;
+    $worker2 = new Worker;
+    $worker3 = new Worker('Артем', 35, 5000);
+
+    $worker1->name = 'Иван';
+    $worker1->age = 25;
+    $worker1->salary = 1000;
+
+    $worker2->name = 'Вася';
+    $worker2->age = 26;
+    $worker2->salary = 2000;
+
+    echo $worker1->age + $worker2->age;
+    echo "<br>";
+    echo $worker1->salary + $worker2->salary;
+    echo "<br>";
+    echo $worker3->say();
+
+
+//    $human1 = new Human('Artem', 21, 'M');
+//    $human2 = new Human('Egor', 17, 'M');
+//
+//    $student1 = new Student('Anton', 33, 'M');
+//
+//    echo  $human1 -> sayHello();
+//    echo "<br>";
+//    echo  $human2 -> sayHello();
+//    echo "<br>";
+//    echo  $student1 -> sayAnswer();
+//    echo "<br>";
+//    echo  $student1 -> sayHello();
+//    echo "<br>";
+//
+//    echo $human1->setName('sd');
+//    Debug::debug($human1->getName());
+
+//    $animal1 = new Animal('Tigra', 4);
+//    $animal2 = new Animal('Bubl', 0);
+//
+//    echo  $animal1 -> sayHello();
+//    echo "<br>";
+//    echo  $animal2 -> sayHello();
+//    echo "<br>";
+
+
+
+
+
+
     $res = mysqli_query($connection, 'select * FROM posts'); // Извлекаем данные из базы данных
     $posts = mysqli_fetch_all($res, MYSQLI_ASSOC); //Извлекаем данные из $res (возвращает данные, состоящие из индексного массива)
     // print_r($posts);
