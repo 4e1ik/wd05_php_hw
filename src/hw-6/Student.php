@@ -33,4 +33,6 @@ class Student extends User {
         $this->course = $course;
         $this->scholarship = $scholarship;
     }
+
+    
 }

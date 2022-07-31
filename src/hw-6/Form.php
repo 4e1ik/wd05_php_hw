@@ -45,4 +45,6 @@ class Form{
     public function varDumb(){
         return var_dump($_POST);
     }
+
+    
 }

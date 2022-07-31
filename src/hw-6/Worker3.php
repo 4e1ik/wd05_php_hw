@@ -22,4 +22,5 @@ class Worker3{
         $this->salary = $salary;
     }
 
+    
 }

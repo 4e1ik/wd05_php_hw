@@ -25,9 +25,4 @@ class SmartForm extends Form {
         }
 
     }
-
-
-
-
-
 }

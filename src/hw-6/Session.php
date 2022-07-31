@@ -23,4 +23,6 @@ class Session{
     public function chekSession(){
         return (!empty($_SESSION));
     }
+
+    
 }

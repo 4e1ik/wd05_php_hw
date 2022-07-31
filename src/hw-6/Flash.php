@@ -13,4 +13,6 @@ class Flash{
     public function getMessage(){
 
     }
+
+    
 }

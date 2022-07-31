@@ -23,4 +23,6 @@ class Cookie{
         $this->value=$value;
         return setcookie($name, $value, time()-3600);
     }
+
+    
 }
