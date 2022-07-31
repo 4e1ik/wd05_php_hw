@@ -9,13 +9,13 @@ class Worker{
     public $age;
     public $salary;
 
-    public function __construct($name, $age, $salary){
-        $this->name = $name;
-        $this->age = $age;
-        $this->salary = $salary;
-    }
-
-    public function say(){
-        echo $this->name." ".$this->age." ".$this->salary;
-    }
+//    public function __construct($name, $age, $salary){
+//        $this->name = $name;
+//        $this->age = $age;
+//        $this->salary = $salary;
+//    }
+//
+//    public function say(){
+//        echo $this->name." ".$this->age." ".$this->salary;
+//    }
 }
