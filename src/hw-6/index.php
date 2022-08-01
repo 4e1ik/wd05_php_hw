@@ -135,8 +135,8 @@ echo $form->close();
 
 br();
 
-9. Создайте класс Cookie - оболочку над работой с куками. Класс должен иметь следующие методы: установка куки set(имя куки, ее значение),
-получение куки get(имя куки), удаление куки del(имя куки).
+//9. Создайте класс Cookie - оболочку над работой с куками. Класс должен иметь следующие методы: установка куки set(имя куки, ее значение),
+//получение куки get(имя куки), удаление куки del(имя куки).
 
 $cooc1 = new Cookie();
 
@@ -155,7 +155,10 @@ $cooc1->delCookie($cooc1->name, $cooc1->value);
 $sess = new Session();
 
 $sess->setSession('Artem', 21);
+echo "<br>";
 echo  $sess->getSession($sess->name);
+
+$sess->delSession($sess->name);
 
 var_dump($sess->chekSession());
 

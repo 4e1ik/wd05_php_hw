@@ -24,5 +24,9 @@ class Session{
         return (!empty($_SESSION));
     }
 
+    public function delSession($name){
+        unset($_SESSION[$name]);
+    }
+
     
 }
