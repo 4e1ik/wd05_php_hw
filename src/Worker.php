@@ -18,6 +18,4 @@ class Worker{
     public function say(){
         echo $this->name." ".$this->age." ".$this->salary;
     }
-
-
 }
